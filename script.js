@@ -94,6 +94,26 @@ function exercice_06()
   }
 }
 
+function exercice_07_08()
+{
+  btn1 = document.getElementsByClassName('jumbotron')[0].getElementsByTagName('a')[0];
+  btn2 = document.getElementsByClassName('jumbotron')[0].getElementsByTagName('a')[1];
+  btn1.removeAttribute("href");
+  btn2.removeAttribute("href");
+  btn1.addEventListener('click', firstBecomeLast);
+  btn2.addEventListener('click', lastCardBecomeFirst);
+  function lastCardBecomeFirst()
+  {
+    let cards = document.querySelectorAll('div.card');
+    cards[cards.length-1].parentNode.parentNode.insertBefore(cards[cards.length-1].parentNode,cards[0].parentNode)
+  }
+
+  function firstBecomeLast(){
+    let cards = document.querySelectorAll('div.card');
+    cards[cards.length-1].parentNode.after(cards[0].parentNode);
+  }
+}
+
 
 exercice_01();
 exercice_02();
@@ -101,4 +121,4 @@ exercice_03();
 exercice_04();
 exercice_05();
 exercice_06();
-
+exercice_07_08();
