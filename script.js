@@ -122,3 +122,4 @@ exercice_04();
 exercice_05();
 exercice_06();
 exercice_07_08();
+exercice_09();
